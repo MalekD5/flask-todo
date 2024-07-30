@@ -4,4 +4,4 @@ dev:
 build:
 	@livetw build
 
-.PHONY: dev
+.PHONY: dev build
