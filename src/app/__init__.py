@@ -1,7 +1,7 @@
 import os
 from flask import (Flask, render_template)
 from infrastructure import TodoRepository as td
-from app.routes import todo_controller
+from app.routes import todo_routes
 from flask_login import LoginManager
 from dotenv import load_dotenv
 
@@ -17,7 +17,7 @@ login_manager.init_app(app)
 
 app.config["LIVETW_DEV"] = os.getenv("LIVETW_ENV") == "development"
 
-app.register_blueprint(todo_controller.todo_bp)
+app.register_blueprint(todo_routes.todo_bp)
 
 @app.route('/')
 def hello_world():
