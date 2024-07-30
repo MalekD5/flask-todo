@@ -1,0 +1,21 @@
+# Python
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+
+# Nodejs
+node_modules
+
+# Build
+dist
+build
+.dev
+*.egg-info
+tailwind_production.css
+
+# Other
+.coverage
+instance
+htmlcov
+db.db

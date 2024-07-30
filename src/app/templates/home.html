@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %} 
+{% from 'components/todo-item.html' import todoItem %}
+<main class="min-h-screen grid place-items-center">
+    <div id='todos' class='max-w-md w-full flex flex-col items-center justify-center'>
+        {% for todo in todos %} 
+            {{ todoItem(todo.id, todo.text) }}
+        {% endfor %}
+    </div>
+    <button hx-get="/todos" hx-target="#todos" hx-swap="beforeend">Add Todo</button>
+</main>
+
+{% endblock %}
