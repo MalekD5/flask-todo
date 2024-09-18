@@ -1,4 +1,4 @@
-from entities.todo import Todo
+from src.entities.todo import Todo
 
 def get_todos() -> list[Todo]:
     return [

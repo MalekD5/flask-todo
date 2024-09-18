@@ -1,12 +1,11 @@
 from typing import List
 from sqlalchemy import (ForeignKey, String)
-from sqlalchemy.orm import (Mapped, mapped_column, relationship)
-
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import (Mapped, mapped_column, relationship, DeclarativeBase)
 
 import uuid
 
-Base = declarative_base()
+class Base(DeclarativeBase):
+    pass
 
 class User(Base):
     __tablename__ = 'user_table'
@@ -15,6 +14,7 @@ class User(Base):
     name: Mapped[str] = mapped_column(String(255))
     email: Mapped[str] = mapped_column(String(255))
     hashed_password: Mapped[str] = mapped_column(String(255))
+    refresh_token: Mapped[str] = mapped_column(String(255))
 
     todos: Mapped[List["Todo"]] = relationship(back_populates="user")
 

@@ -1,12 +1,11 @@
-class Todo:
-    def __init__(self, id, text, completed):
-        self.id = id
-        self.text = text
-        self.completed = completed
+from dataclasses import dataclass
 
-    def __repr__(self):
-        return f"Todo(id={self.id}, text={self.text}, completed={self.completed})"
-    
+@dataclass
+class Todo:
+    id: str;
+    text: str;
+    completed: bool;
+
     @staticmethod
     def create(id, text, completed):
         return Todo(id, text, completed)

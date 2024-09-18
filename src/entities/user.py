@@ -1,7 +1,8 @@
 from dataclasses import dataclass
+from flask_login import UserMixin
 
 @dataclass
-class User:
+class User(UserMixin):
     id: str;
     name: str;
     email: str;

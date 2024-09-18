@@ -4,4 +4,7 @@ dev:
 build:
 	@livetw build
 
-.PHONY: dev build
+test:
+	@pytest -s $(filter-out $@,$(MAKECMDGOALS))
+
+.PHONY: dev build test
